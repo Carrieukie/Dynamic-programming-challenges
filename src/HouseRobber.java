@@ -28,20 +28,12 @@ public class HouseRobber {
 //    Time Complexity - O(n)
 //    Space complexity O(n)
     public static int rob(int[] nums) {
-
-        if (nums == null){
-            return 0;
-        }
-
         int n = nums.length;
+        if (n == 1) return nums[0];
+
         int[] dp = new int[nums.length];
 
         dp[0] = nums[0];
-
-        if (n == 1){
-            return nums[1];
-        }
-
         dp[1] = Math.max(nums[0],nums[1]);
 
         for(int i=2;i<n;i++){
@@ -52,6 +44,7 @@ public class HouseRobber {
         return dp[n-1];
 
     }
+
     //  Time Complexity - O(n)
     //  Space complexity O(1)
     public static int robEfficiently(int[] nums) {

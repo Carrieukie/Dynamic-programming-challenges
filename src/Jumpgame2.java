@@ -31,16 +31,21 @@ public class Jumpgame2 {
     }
 
     public static int jump(int[] nums) {
-
+        int n = nums.length;
         int[] dp = new int[nums.length];
-        dp[nums.length - 1] = 0;
-        dp[nums.length - 2] = 1;
+        dp[nums.length -1 ] = 0;
 
         for (int i = nums.length - 2; i >=0 ; i--) {
-            dp[i] = Math.max(dp[i -1] + nums[i] , )
+            int min = Integer.MAX_VALUE;
+            for (int j = i = 1; j < Math.min(n-1, i + nums[i]) ; j++) {
+                min = Math.min(min,dp[j]);
+            }
+            if (min != Integer.MAX_VALUE){
+                dp[i] = min + 1;
+            }
         }
 
-        return Math.min(dp[0],dp[1]);
+        return dp[0];
 
     }
 }

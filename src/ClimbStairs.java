@@ -23,17 +23,12 @@
  */
 public class ClimbStairs {
     public int climbStairs(int n) {
-        if (n < 1){
-            return 0;
-        }
 
-        if(n == 1){
-            return 1;
-        }
-        if(n == 2){
-            return 2;
-        }
-        int numsways[] = new int[n + 1];
+        if (n < 1) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 2;
+
+        int[] numsways = new int[n + 1];
         numsways[0] = 0;
         numsways[1] = 1;
         numsways[2] = 2;
