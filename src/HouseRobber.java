@@ -21,37 +21,40 @@
 public class HouseRobber {
 
     public static void main(String[] args) {
-        int[] nums = {2, 1, 1, 2};
+        int[] nums = {1,2,3};
         System.out.println(rob(nums));
     }
 
-//    public static int rob(int[] nums) {
-//
-//        if (nums == null){
-//            return 0;
-//        }
-//
-//        int n = nums.length;
-//        int[] dp = new int[nums.length];
-//
-//        dp[0] = nums[0];
-//
-//        if (n == 1){
-//            return nums[1];
-//        }
-//
-//        dp[1] = Math.max(nums[0],nums[1]);
-//
-//        for(int i=2;i<n;i++){
-//            int possmax = nums[i]+dp[i-2];
-//            dp[i] = Math.max(possmax,dp[i-1]);
-//        }
-//
-//        return dp[n-1];
-//
-//    }
-
+//    Time Complexity - O(n)
+//    Space complexity O(n)
     public static int rob(int[] nums) {
+
+        if (nums == null){
+            return 0;
+        }
+
+        int n = nums.length;
+        int[] dp = new int[nums.length];
+
+        dp[0] = nums[0];
+
+        if (n == 1){
+            return nums[1];
+        }
+
+        dp[1] = Math.max(nums[0],nums[1]);
+
+        for(int i=2;i<n;i++){
+            int possmax = nums[i]+dp[i-2];
+            dp[i] = Math.max(possmax,dp[i-1]);
+        }
+
+        return dp[n-1];
+
+    }
+    //  Time Complexity - O(n)
+    //  Space complexity O(1)
+    public static int robEfficiently(int[] nums) {
 
         int prevprev = nums[0];
         int prev = Math.max(prevprev,nums[1]);
