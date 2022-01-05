@@ -56,6 +56,7 @@ public class HouseRobber2 {
             dp[0][i] = Math.max(nums[j] + dp[0][i - 2], dp[0][i-1]);
         }
 
+        // Get the maximum of the two arrays
         return Math.max(dp[0][nums.length -2], dp[1][nums.length -2]);
 
     }
