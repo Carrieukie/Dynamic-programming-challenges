@@ -10,8 +10,11 @@ public class GridTraveller {
         if (n == 0 || m == 0) return 0;
         if (n == 1 && m == 1) return 1;
         String key = m + "," + n;
-        if (map.containsKey(key)) return map.get(key);
-        map.put(key ,numways(m, n -1,map) + numways(m - 1,n, map));
+        if (map.containsKey(key)) {
+            map.get(key);
+        }else {
+            map.put(key ,numways(m, n -1,map) + numways(m - 1,n, map));
+        }
         return map.get(key);
     }
 }
