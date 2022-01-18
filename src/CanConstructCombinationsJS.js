@@ -2,6 +2,7 @@
  * This refused to work in java, if you know how make a PR and push a java solution
  * @param target
  * @param wordBank
+ * @param memo
  * @returns {*[][]|[]}
  */
 const allConstruct  = (target,wordBank,memo={}) => {
@@ -20,7 +21,7 @@ const allConstruct  = (target,wordBank,memo={}) => {
         }
     }
     memo[target] = result
-    return result;
+    return result
 }
 
 console.log(allConstruct("purple",['pur','pl','purp','le','ple']))
