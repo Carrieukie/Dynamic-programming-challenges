@@ -1,3 +1,3 @@
 git add * 
-git commit -m "More challenges"
+git commit -m "Second Smallest Number"
 git push
