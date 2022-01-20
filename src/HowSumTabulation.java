@@ -33,7 +33,7 @@ public class HowSumTabulation {
             }
         }
         System.out.println(map);
-        return null;
+        return map.get(target);
     }
 
 }
