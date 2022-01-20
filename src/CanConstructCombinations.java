@@ -15,8 +15,9 @@ public class CanConstructCombinations {
                 var suffix = string.substring(st.length());
                 var suffixways = allConstruct(suffix,array,arrayLists);
                 var numways = suffixways.stream().map(arr -> {
-                    arr.add(st);
-                    return arr;
+                    var arrClone = (ArrayList<String>) arr.clone();
+                    arrClone.add(st);
+                    return arrClone;
                 }).collect(Collectors.toList());
                 arrayLists.addAll(numways);
             }

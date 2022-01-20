@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class GridTravellerTabulation {
 
@@ -11,7 +10,7 @@ public class GridTravellerTabulation {
         int[][] dp = new int[m + 1][n + 1];
         dp[1][1] = 1;
         for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[1].length; j++) {
+            for (int j = 1; j < dp[i].length; j++) {
                 if (i == 1 && j == 1){
                 }else {
                     dp[i][j] = dp[i -1][j] + dp[i][j -1];
@@ -19,7 +18,7 @@ public class GridTravellerTabulation {
             }
             System.out.println(Arrays.toString(dp[i]));
         }
-        return dp[m] [n];
+        return dp[m][n];
     }
 
 
