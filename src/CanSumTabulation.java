@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class CanSumTabulation {
     public static void main(String[] args) {
         for (int i = 0; i < 500; i++) {
-            System.out.println( i + " " + canSum(new int[]{8,11}, i));
+            System.out.println( i + " " + canSum(new int[]{3,2}, i));
         }
     }
 
