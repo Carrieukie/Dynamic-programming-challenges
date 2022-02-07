@@ -25,8 +25,9 @@
 public class Jumpgame {
 
     public static void main(String[] args) {
-        System.out.println(canJump(new int[]{2, 3, 0, 1, 4}));
+        System.out.println(canJump(new int[]{3, 2, 1, 0, 5}));
     }
+
 
     public static boolean canJump(int[] nums) {
 
@@ -35,8 +36,9 @@ public class Jumpgame {
 
         //Loop cannot go beyond the best position so far
         for (int i = 0; i <= bestPositionSoFar; i++) {
-            if (bestPositionSoFar < (nums[i] + i)) {
-                bestPositionSoFar = (nums[i] + i);
+            int possibleBest = nums[i] + i;
+            if (bestPositionSoFar < possibleBest) {
+                bestPositionSoFar = possibleBest;
                 ans++;
             }
             if (bestPositionSoFar >= nums.length - 1) {

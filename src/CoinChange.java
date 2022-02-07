@@ -1,19 +1,20 @@
 public class CoinChange {
+   static int number = 0;
+
     public static void main(String[] args) {
-        System.out.println(coinChange(new int[]{5, 2, 1}, 11, 0));
+        System.out.println("hvg8t6768v-jjbh".replace("-","").toUpperCase());
+//       coinChange(new int[]{1,3,5}, 6);
+//        System.out.println(number);
     }
 
-    public static int coinChange(int[] coins, int amount, int number) {
-        if (amount < 0) return amount;
-        if (amount == 0) return number;
+    public static void coinChange(int[] coins, int amount) {
+        if (amount < 0) return ;
+        if (amount == 0) {
+            ++number;
+        }
         for (int coin : coins) {
             int remainder = amount - coin;
-            int result = coinChange(coins, remainder, ++number);
-            if (result > 0) {
-                return result;
-            }
-            --number;
+             coinChange(coins, remainder);
         }
-        return -1;
     }
 }
