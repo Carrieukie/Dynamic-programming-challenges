@@ -19,13 +19,13 @@ public class HowSum {
                 remainderResult.add(num);
                 integerArrayListHashMap.put(target, (ArrayList<Integer>) remainderResult);
                 ans = Math.max(remainderResult.size(),ans);
-//                return remainderResult;
+                return remainderResult;
             }else{
                 integerArrayListHashMap.put(target, null);
             }
         }
         System.out.println(ans);
-        return null;
+        return integerArrayListHashMap.get(target);
 
     }
 }
